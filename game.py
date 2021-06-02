@@ -1,14 +1,25 @@
 
 import random
 
+import os
+
+import dotenv
+
+dotenv.load_dotenv()
+
+PLAYER_NAME = os.getenv("PLAYER_NAME")
+print(PLAYER_NAME)
 
 
-print("Rock, Paper, Scissors, Shoot!")
+print("Welcome", PLAYER_NAME, "Rock, Paper, Scissors, Shoot!")
 
 user_choice = input("Please choose one of 'rock', 'papers', 'scissors': ")
 
 #print(user_choice)
 print("USER CHOICE:", user_choice)
+
+#validate the input such that only if it is one of the expected values
+
 
 if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
     print("VALID. KEEP GOING")
@@ -38,6 +49,6 @@ if (user_choice == "paper") and (computer_choice == "scissors"):
 if (user_choice == computer_choice):
     print("You tied!")
 
-#configure player
+# configure player name via env variables
 
 print("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN")
